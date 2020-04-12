@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import'./cb.css';
 
 //Made the UI
-const CustomButton = ({text, color, onClick}) => <div 
+const CustomButton = ({text, color, onClick}) => {
+
+return <div 
 style={{backgroundColor:color, boxShadow:"1px 1px 5px "+color}}
 className="custom_button_box"
 onClick={onClick}
@@ -11,6 +13,7 @@ onClick={onClick}
         {text}
     </div>
 </div>
+}
 
 function ButtonClick(){
     alert("clicked");
