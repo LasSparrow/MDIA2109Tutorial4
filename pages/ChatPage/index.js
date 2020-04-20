@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './chatpage.css';
 import Chat from '../../comps/Chat';
 import CustomButton from '../../comps/CustomButton';
 import Header from '../../comps/Header';
 import Input from '../../comps/Input';
+import {TiMessages} from 'react-icons/ti';
 
 /*
 var welcome = "Welcome to my App!";
@@ -20,9 +21,15 @@ const ChatPage = ({}) => {
     const [color, setColor] = useState("#60D");
     const [text, setText] = useState("Weird Button?");
 
-    return <div>
-        <div id="welcome">
-            <Header fontSize={32} text={welcome} />
+    useEffect(()=>{
+        setTimeout(()=>{
+            document.querySelector("#chatpage").style.left = 0;
+        }, 50);
+    }, []);
+
+    return <div id="chatpage">
+        <div id="welcomechat">
+            <TiMessages size="4em" /><Header fontSize={32} text={welcome} />
         </div>
         <div id="chats" onClick={()=>{ //shortest way of writing function (nameless)
             setWelcome("Start with sending a message."); //stating the function

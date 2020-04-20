@@ -1,0 +1,15 @@
+#aboutpage {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.showtext {
+    display: none;
+}
+
+#welcomeabout {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    color: goldenrod;
+}

@@ -1,12 +1,12 @@
-#chatpage {
+#contactpage {
     position: relative;
     left: -100%;
     transition: left 1s;
 }
 
-#welcomechat {
+#welcomecontact {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    color: blue;
+    color: plum;
 }

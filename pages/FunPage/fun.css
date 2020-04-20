@@ -1,0 +1,12 @@
+#welcomefun {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    color: purple;
+}
+
+#funpage {
+    position: relative;
+    right: -100%;
+    transition: right 1s;
+}
