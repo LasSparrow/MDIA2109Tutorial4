@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "dev": "next",
+    "dev": "next -p 8080",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "next start -p 8080"
   },
   "repository": {
     "type": "git",
