@@ -5,6 +5,9 @@ import CustomButton from '../../comps/CustomButton';
 import Header from '../../comps/Header';
 import Input from '../../comps/Input';
 import {TiMessages} from 'react-icons/ti';
+import {data, ChangeData} from '../data';
+
+console.log("doesn't reload, loads only once", data);
 
 /*
 var welcome = "Welcome to my App!";
@@ -15,6 +18,7 @@ function setWelcome(){
 */
 
 const ChatPage = ({}) => {
+    console.log("reloads every time component is used", data);
     const [welcome, setWelcome] = useState("Welcome to my App!"); //same as var and function above
     const [msg, setMsg] = useState("Please type something!");
     const [resp, setResp] = useState("Let me respond to you!");
@@ -58,6 +62,11 @@ const ChatPage = ({}) => {
 }
 
 function CheckResponse(inp){
+    var num = data.numClicks;
+    ChangeData({
+        lastaction:"Clicked send",
+        numClicks:num+1
+    })
     switch(inp.toLowerCase()){
         case "hi":
             return "I love pie";

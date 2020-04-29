@@ -4,17 +4,22 @@ import Header from '../comps/Header';
 import {GiPawHeart} from 'react-icons/gi';
 import './index.css';
 
-function ClickIndex(){
-    // if(confirm("Are you sure?")){
-    //     //move to ChatPage
-    //     Router.push("/ChatPage");
-    // }
+import {data, ChangeData} from './data';
+
+console.log(data);
+
+function ClickChat(){
+    ChangeData({
+        lastaction:"Went to chat!",
+        numClicks:0
+    })
     document.querySelector("#mainapp").style.opacity = 0;
     document.querySelector("#mainapp").style.right = "-100%";
     setTimeout(function(){
         Router.push("/ChatPage");
     }, 1000)
 }
+
 
 // function ClickChat(){
 //     document.querySelector("#mainapp").style.opacity = 0;
@@ -33,9 +38,9 @@ function ClickIndex(){
 // }
 
 const Index = () =><div id="mainapp">
-    <div onClick={ClickIndex}><Header text="Index" fontSize={25}/></div>
+    <div><Header text="Tutorials" fontSize={25}/></div>
     <GiPawHeart color="red" size="3em"/><br />
-    <Link href="/ChatPage"><a>Chat Page</a></Link>
+    <a onClick={ClickChat}>Chat Page</a>
     <br />
     <Link href="/Contact"><a>Contact Page</a></Link>
     <br />

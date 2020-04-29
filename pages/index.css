@@ -8,3 +8,9 @@ body, html {
     opacity: 1;
     transition: opacity 1s, right 1s;
 }
+
+#mainapp a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: purple;
+}

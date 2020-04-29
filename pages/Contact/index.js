@@ -3,6 +3,8 @@ import './contact.css';
 import CustomButton from '../../comps/CustomButton';
 import Header from '../../comps/Header';
 import {AiOutlineMail} from 'react-icons/ai';
+import {data, ChangeData} from '../data';
+console.log(data);
 
 var index = 0;
 const headers_arr = [
@@ -16,6 +18,25 @@ const headers_arr = [
 ]
 
 const Contact = () => {
+    console.log("contact page", data);
+    var text = "";
+    switch (data.lastaction){
+        case "":
+            text = "Please chat with me first";
+            break;
+        default:
+            text = "Thanks for chatting!";
+            break;
+    }
+
+    if(data.numClicks > 0 && data.numClicks < 10){
+        text += "Chat more with me!";
+    } else if(data.numClicks >= 10 && data.numClicks < 20){
+        text += "You are a chatterbox!";
+    }
+    // if(data.lastaction === ""){
+    //     text="Please go to chat first before contacting me!"
+    // }
 
     // step 1 - create the state variable and the function to update it, put a default inside
     // const [state variable, function] = default("info");
@@ -62,7 +83,8 @@ return <div id="contactpage" style={{left:pageleft}}>
 
     </div>
     <br />
-    <CustomButton text="Email" onClick={()=>{
+    {text}
+    {data.lastaction !== "" ? <CustomButton text="Email" onClick={()=>{
         // step 3 - connect the state function to an interaction or figure out when you want to update the interface
         setHeader(headers_arr[index]);
         // setHeader(headers_arr[index].text);
@@ -71,7 +93,7 @@ return <div id="contactpage" style={{left:pageleft}}>
         if(index > headers_arr.length-1){
             index = 0;
         }
-    }} />
+    }} /> : null}
 </div>
 }
 
